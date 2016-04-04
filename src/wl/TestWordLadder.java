@@ -27,6 +27,10 @@ public class TestWordLadder {
 		 wl.printGraph();
 		 System.out.println( wl.distanceTo("their", "write"));
 		// wl.distanceTo("other", "there");
+//		String[] s = new String[2];
+//		s[0] = "words-5757.txt";
+//		s[1] = "words-5757-in.txt";
+//		Main m = new Main(s);
 	}
 
 }
