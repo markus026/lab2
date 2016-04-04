@@ -1,5 +1,6 @@
 package wl;
 
+import java.util.AbstractMap;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map.Entry;
@@ -61,6 +62,9 @@ public class WordLadder {
 	}
 	
 	public int distanceTo(String word1, String word2){
+		if(word1.equals(word2)){
+			return 0;
+		}else{
 		PriorityQueue<String> queue = new PriorityQueue<String>();
 		HashMap<String, Boolean> marked = new HashMap<String, Boolean>();
 		HashMap<String, Integer> distance = new HashMap<String, Integer>();
@@ -87,6 +91,7 @@ public class WordLadder {
 		}
 		
 		return distance.get(word2);
+	}
 	}
 	
 }
