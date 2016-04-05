@@ -14,15 +14,15 @@ public class Main {
 			words = new Scanner(new File(fileName[0]));
 			wordsPair = new Scanner(new File(fileName[1]));
 			wl = new WordLadder();
-			int j = 1;
+//			int j = 1;
 			while(words.hasNextLine()){
-				if(j % 250 == 0){
-					System.out.println("hej");
-				}
+//				if(j % 250 == 0){
+//					System.out.println("hej");
+//				}
 				wl.addWord(words.nextLine());
-				j++;
+//				j++;
 			}
-			System.out.println("Add finished");
+//			System.out.println("Add finished");
 			while(wordsPair.hasNextLine()){
 				String line = wordsPair.nextLine();
 				System.out.println(wl.distanceTo(line.substring(0, 5), line.substring(6)));
@@ -38,10 +38,10 @@ public class Main {
 	}
 
 	public static void main(String[] args) {
-		String[] s = new String[2];
-		s[0] = "words-5757.txt";
-		s[1] = "words-5757-in.txt";
-		new Main(s);
+//		String[] s = new String[2];
+//		s[0] = "words-5757.txt";
+//		s[1] = "words-5757-in.txt";
+		new Main(args);
 
 	}
 

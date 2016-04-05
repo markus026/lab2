@@ -28,18 +28,43 @@ public class WordLadder {
 		}
 	}
 
-	private boolean wordsAreConnected(String word1, String word2) {
+	private boolean wordsAreConnected(String word1, String word2){
+		ArrayList<Character> w1 = new ArrayList<Character>();
+		ArrayList<Character> w2 = new ArrayList<Character>();
+		char replacer = 1;
 		String s = word1.substring(1);
-		String temp = word2 + "";
+		for(int i = 0; i < 4; i++){
+			w1.add(s.charAt(i));
+			w2.add(word2.charAt(i));
+		}
+		w2.add(word2.charAt(4));
 		int checker = 0;
-		for (int i = 0; i < 4; i++) {
-			String currentChar = Character.toString(s.charAt(i));
-			if (temp.contains(currentChar)) {
-				int index = temp.indexOf(currentChar);
-				temp = temp.substring(0, index) + temp.substring(index + 1);
-				checker++;
+		for(int i = 0; i < 4;i++){
+			for(int j = 0; j < 5 ; j++){
+				if(w1.get(i).equals(w2.get(j))){
+					w2.set(j, replacer);
+					checker++;
+					break;
+				}
+			}
+			if(checker < i+1){
+				return false;
 			}
 		}
+		
+		
+		
+//		String s = word1.substring(1);
+//		String temp = word2 + "";
+//		int checker = 0;
+//		for (int i = 0; i < 4; i++) {
+//			String currentChar = Character.toString(s.charAt(i));
+//			if (temp.contains(currentChar)) {
+//				int index = temp.indexOf(currentChar);
+//				temp = temp.substring(0, index) + temp.substring(index + 1);
+//				checker++;
+//			}
+//		}
 		if (checker > 3) {
 			return true;
 		}
